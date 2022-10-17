@@ -1,0 +1,14 @@
+.row{
+    background-color: aqua;
+    padding: 20px;
+}
+.contenedor{
+    width: auto;
+}
+.p1, .p2{
+    display: inline-block;
+    text-align: justify;
+}
+img{
+    
+}
