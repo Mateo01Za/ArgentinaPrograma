@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NodeCompatibleEventEmitter } from 'rxjs/internal/observable/fromEvent';
 import { Experiencia } from '../model/experiencia';
 
 @Injectable({
@@ -24,7 +23,7 @@ export class SExperienciaService {
   }
 
   public update (id: number, experiencia: Experiencia): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id})`, experiencia);
+    return this.httpClient.put<any>(this.expURL + `update/${id}`, experiencia);
   }
 
   public delete(id: number): Observable<any>{

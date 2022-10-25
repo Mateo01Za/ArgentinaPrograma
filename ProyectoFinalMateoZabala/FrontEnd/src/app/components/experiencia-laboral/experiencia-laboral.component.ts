@@ -27,5 +27,16 @@ export class ExperienciaLaboralComponent implements OnInit {
     
   }
 
+  delete(id?: number){
+    if(id != undefined){
+      this.sExperiencia.delete(id).subscribe(
+        data => {
+          this.cargarExperiencia()
+        }, err => {
+          alert("No se pudo borrar");
+        }
+      )
+    }
+  }
 }
 
