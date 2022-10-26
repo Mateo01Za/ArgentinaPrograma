@@ -11,6 +11,12 @@ div{
     border-radius: 100%;
     margin-top: -10%;
  } 
+
+#descripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
 #nombre{
     font-weight: bold;
 }

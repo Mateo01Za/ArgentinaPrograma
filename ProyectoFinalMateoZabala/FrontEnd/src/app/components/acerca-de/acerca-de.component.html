@@ -1,22 +1,23 @@
+<div>
+    <button type="button" class="btn btn-dark" routerLink="/editacercade/3" *ngIf="isLogged" >
+        Edit persona
+    </button>
+</div>
 <div class="row">
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 ">
-        <img src="../../../assets/foto-facha-to.png"
+        <img src="{{persona?.img}}"
         class="img-fluid" id="fotoPerfil">
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
+        <p id="nombre">{{persona?.nombre}} {{persona?.apellido}}</p>
         <p id="fullStack">Full Stack Developor Jr</p>
     </div>
 
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" descripcion>
         <span>
             <h1>Acerca de mi</h1>
-            <p>Lorem ipsum dolor sit amet
-                 consectetur adipisicing elit.
-                 Dicta maxime, tenetur suscipit 
-                 adipisci quod delectus magnam quae accusamus
-                 pariatur a. Explicabo a neque,
-                 hic optio error debitis ullam fugiat omnis?
+            <p>
+                {{persona?.descripcion}}
             </p>
         </span>
     </div>
