@@ -7,3 +7,14 @@
     flex-direction: column;
     align-items: center;
  }
+
+ button{
+    margin-left: 5%;
+ }
+ .prime{
+    background-color: rgb(247, 230, 230);    
+ }
+
+ h1{
+   padding-left: 10px;
+ }
