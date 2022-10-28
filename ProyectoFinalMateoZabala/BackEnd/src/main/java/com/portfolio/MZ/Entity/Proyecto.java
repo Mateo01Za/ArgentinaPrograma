@@ -20,14 +20,15 @@ public class Proyecto {
     private int id;
     private String nombre;
     private String descripcion;
-    
+    private String img;
 
     public Proyecto() {
     }
 
-    public Proyecto(String nombre, String descripcion) {
+    public Proyecto(String nombre, String descripcion, String img) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.img = img;
         
     }
 
@@ -54,8 +55,13 @@ public class Proyecto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    
+    public String getImg(){
+        return img;
+    }
 
-    
-    
-    
+    public void setImg(String img){
+        this.img=img;
+    }
+       
 }

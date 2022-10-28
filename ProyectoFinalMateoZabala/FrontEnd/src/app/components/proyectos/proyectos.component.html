@@ -1,16 +1,19 @@
 <div class="row">
     <h1>Proyectos</h1>
-    <div class="col-lg-2">
-        <button type="button" class="btn btn-dark" routerLink="/nuevoproyecto" *ngIf="isLogged">
-            Agregar proyecto
-        </button>
-    </div>
-
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="col-lg-2">
+            <button  class="btn btn-dark" *ngIf="isLogged">
+                Agregar proyecto
+            </button>
+        </div>
+    </form>
+   
     <div class="col lg 1"></div>
     <div class="col-lg-11">
         <table class="table">
             <tbody>
                 <tr *ngFor="let Proyecto of proyecto">
+                    <td> <img src="{{Proyecto.img}}" alt=""></td>
                     <td>
                         <h2>{{Proyecto.nombre}}</h2>
                     </td>

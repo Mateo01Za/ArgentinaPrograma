@@ -13,6 +13,9 @@ export class ExperienciaLaboralComponent implements OnInit {
   constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
   isLogged = false;
 
+  newnombre: string = 'Nombre de la experiencia';
+  newdescripcion: string = 'descripcion de la experiencia';
+
   ngOnInit(): void {
     this.cargarExperiencia();
     if(this.tokenService.getToken()){
@@ -37,6 +40,20 @@ export class ExperienciaLaboralComponent implements OnInit {
         }
       )
     }
+  }
+
+  onCreate(): void{
+   
+    const experienciaC = new Experiencia(this.newnombre,this.newdescripcion );
+    this.sExperiencia.save(experienciaC).subscribe(
+      data =>{
+        alert("Experiencia añadido correctamente");
+        this.cargarExperiencia();
+      }, err =>{
+        alert("falló");
+        
+      }
+    )
   }
 }
 

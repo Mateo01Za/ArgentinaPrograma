@@ -19,7 +19,7 @@ export class NewProyectoComponent implements OnInit {
 
   onCreate(): void{
    
-    const proyecto = new Proyecto(this.nombre, this.descripcion);
+    const proyecto = new Proyecto(this.nombre, this.descripcion,'');
     this.proyectoS.save(proyecto).subscribe(
       data =>{
         alert("Proyecto añadido correctamente");

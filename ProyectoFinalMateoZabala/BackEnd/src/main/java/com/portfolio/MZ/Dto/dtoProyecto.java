@@ -11,11 +11,12 @@ import javax.validation.constraints.NotBlank;
  * @author Mateo
  */
 public class dtoProyecto {
-    @NotBlank
+    
     private String nombre;
-    @NotBlank
+    
     private String descripcion;
     
+    private String img;
 
     public dtoProyecto() {
     }
@@ -23,6 +24,7 @@ public class dtoProyecto {
     public dtoProyecto(String nombre, String descripcion, String img) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.img=img;
     }
 
     public String getNombre() {
@@ -41,4 +43,11 @@ public class dtoProyecto {
         this.descripcion = descripcion;
     }   
     
+    public String getImg(){
+        return img;
+    }
+    
+    public void setImg(String img){
+        this.img = img;
+    }
 }

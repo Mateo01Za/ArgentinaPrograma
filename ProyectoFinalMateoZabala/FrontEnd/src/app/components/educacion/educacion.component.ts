@@ -14,6 +14,9 @@ export class EducacionComponent implements OnInit {
   constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
   isLogged = false;
 
+  newnombre: string = 'Nombre de Educacion';
+  newdescripcion: string = 'Descripcion de la educacion';
+
   ngOnInit(): void {
     this.cargarEducacion();
     if(this.tokenService.getToken()){
@@ -41,5 +44,19 @@ export class EducacionComponent implements OnInit {
         }
       )
     }
+  }
+
+  onCreate(): void{
+   
+    const educacionC = new Educacion(this.newnombre,this.newdescripcion );
+    this.educacionS.save(educacionC).subscribe(
+      data =>{
+        alert("Proyecto añadido correctamente");
+        this.cargarEducacion();
+      }, err =>{
+        alert("falló");
+        
+      }
+    )
   }
 }

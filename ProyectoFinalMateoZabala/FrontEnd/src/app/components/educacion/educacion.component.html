@@ -1,16 +1,19 @@
 <div class="row">
     <h1>Educacion</h1>
-    <div class="col-lg-2">
-        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
-            Agregar Educacion
-        </button>
-    </div>
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="col-lg-2">
+            <button class="btn btn-dark"  *ngIf="isLogged">
+                Agregar Educacion
+            </button>
+        </div>
+    </form>
 
     <div class="col lg 1"></div>
     <div class="col-lg-11">
         <table class="table">
             <tbody>
                 <tr *ngFor="let Educacion of educacion">
+                    <td> <img src="../../../assets/communication.png" alt=""></td>
                     <td>
                         <h2>{{Educacion.nombreE}}</h2>
                     </td>

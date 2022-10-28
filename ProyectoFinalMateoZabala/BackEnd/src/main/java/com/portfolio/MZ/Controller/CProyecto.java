@@ -51,11 +51,11 @@ public class CProyecto {
     public ResponseEntity<?> create(@RequestBody dtoProyecto dtoproyecto){
         if(StringUtils.isBlank(dtoproyecto.getNombre()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        if(sProyecto.existsByNombre(dtoproyecto.getNombre()))
-            return new ResponseEntity(new Mensaje("Proyecto ya existe"), HttpStatus.BAD_REQUEST);
+        /*if(sProyecto.existsByNombre(dtoproyecto.getNombre()))
+            return new ResponseEntity(new Mensaje("Proyecto ya existe"), HttpStatus.BAD_REQUEST);*/
         
         Proyecto proyecto;
-        proyecto = new Proyecto(dtoproyecto.getNombre(), dtoproyecto.getDescripcion());
+        proyecto = new Proyecto(dtoproyecto.getNombre(), dtoproyecto.getDescripcion(), dtoproyecto.getImg());
         sProyecto.save(proyecto);
         
         return new ResponseEntity(new Mensaje("Proyecto agregado"), HttpStatus.OK);
@@ -66,8 +66,8 @@ public class CProyecto {
         if(!sProyecto.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         //Compara nombre de proyectos
-        if(sProyecto.existsByNombre(dtoproyecto.getNombre()) && sProyecto.getByNombre(dtoproyecto.getNombre()).get().getId() != id)
-            return new ResponseEntity(new Mensaje("Esa proyecto ya existe"), HttpStatus.BAD_REQUEST);
+       /* if(sProyecto.existsByNombre(dtoproyecto.getNombre()) && sProyecto.getByNombre(dtoproyecto.getNombre()).get().getId() != id)
+            return new ResponseEntity(new Mensaje("Esa proyecto ya existe"), HttpStatus.BAD_REQUEST);*/
         //No puede estar vacio
         if(StringUtils.isBlank(dtoproyecto.getNombre()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -75,7 +75,7 @@ public class CProyecto {
         Proyecto proyecto = sProyecto.getOne(id).get();
         proyecto.setNombre(dtoproyecto.getNombre());
         proyecto.setDescripcion((dtoproyecto.getDescripcion()));
-        
+        proyecto.setImg(dtoproyecto.getImg());
         sProyecto.save(proyecto);
         return new ResponseEntity(new Mensaje("Proyecto actualizada"), HttpStatus.OK);
     }
