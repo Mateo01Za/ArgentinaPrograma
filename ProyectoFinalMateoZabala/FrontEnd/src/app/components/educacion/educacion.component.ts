@@ -48,10 +48,10 @@ export class EducacionComponent implements OnInit {
 
   onCreate(): void{
    
-    const educacionC = new Educacion(this.newnombre,this.newdescripcion );
+    const educacionC = new Educacion(this.newnombre,this.newdescripcion, '' );
     this.educacionS.save(educacionC).subscribe(
       data =>{
-        alert("Proyecto añadido correctamente");
+        alert("Educacion añadido correctamente");
         this.cargarEducacion();
       }, err =>{
         alert("falló");

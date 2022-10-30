@@ -20,13 +20,13 @@ public class Experiencia {
     private int id;
     private String nombreE;
     private String descripcionE;
-    
+    private String ImagenE;
     //const
 
     public Experiencia() {
     }
 
-    public Experiencia(String nombreE, String descripcionE) {
+    public Experiencia(String nombreE, String descripcionE, String imagenE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
@@ -56,6 +56,12 @@ public class Experiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
-    
+    public String getImagenE(){
+         return ImagenE;
+    }
+     
+    public void setImagenE(String imagenE){
+        this.ImagenE = imagenE;
+    } 
     
 }
