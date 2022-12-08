@@ -10,5 +10,5 @@ export const environment = {
     measurementId: 'G-CF863CD823',
   },
   production: true,
-  URL: 'https://backendmzap.herokuapp.com/',
+  URL: 'proyectoap-zabalamateo01.koyeb.app/',
 };
