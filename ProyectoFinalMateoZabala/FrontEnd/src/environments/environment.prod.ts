@@ -10,5 +10,5 @@ export const environment = {
     measurementId: 'G-CF863CD823',
   },
   production: true,
-  URL: 'proyectoap-zabalamateo01.koyeb.app/',
+  URL: 'https://mzbackap-zabalamateo01.koyeb.app/',
 };
